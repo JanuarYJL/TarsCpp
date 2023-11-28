@@ -20,6 +20,14 @@ if("${TARS_CPP_COMMON}" STREQUAL "")
 
 endif()
 
+if(WIN32)
+    # 设置静态使用MFC及MT MTd模式
+    set(CMAKE_MFC_FLAG 1)    # It should be set to 1 for the static MFC library, and 2 for the shared MFC library.
+    add_definitions(/Zi)    # /Zi 用来生成程序数据库格式的调试信息
+    set(CMAKE_CXX_FLAGS_RELEASE "-MT -O2")
+    set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-MT -O2")
+    set(CMAKE_CXX_FLAGS_DEBUG "-MTd -Od")
+endif(WIN32)
 add_definitions(-DTARS_VERSION="${TARS_VERSION}")
 message("TARS_VERSION:              ${TARS_VERSION}")
 
