@@ -1,3 +1,5 @@
 servant/makefile/tars-tools.cmake
 .idea
 /cmake-build-debug-177
+
+/build-*

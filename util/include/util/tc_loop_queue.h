@@ -14,12 +14,12 @@
  * specific language governing permissions and limitations under the License.
  */
 
-#ifndef  _TC_LOOP_QUEUE_H_
-#define  _TC_LOOP_QUEUE_H_
+#pragma once
 
 #include <vector>
 #include <stdlib.h>
 #include <string.h>
+#include "util/tc_platform.h"
 
 using namespace std;
 
@@ -227,5 +227,4 @@ private:
 
 }
 
-#endif   /* ----- #ifndef _TC_LOOP_QUEUE_H_ ----- */
 

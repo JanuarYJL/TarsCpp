@@ -1,5 +1,4 @@
-﻿#ifndef __TC_PORT_H
-#define __TC_PORT_H
+﻿#pragma once
 
 #include "util/tc_platform.h"
 #include "util/tc_ex.h"
@@ -49,7 +48,7 @@ struct TC_Port_Exception : public TC_Exception
 /**
  * 跨平台相关函数封装
  */
-class TC_Port
+class UTIL_DLL_API TC_Port
 {
 public:
 
@@ -136,7 +135,15 @@ public:
 #endif
 
     /**
-     * 查看文件属性
+     * 查看文件属性(如果不是link, 则看到的是文件本身的属性)
+     * @param path
+     * @param buf
+     * @return
+     */
+    static int stat(const char * path, stat_t * buf);
+
+    /**
+     * 查看文件属性(如果是link, 这看到指向的文件)
      * @param path
      * @param buf
      * @return
@@ -377,4 +384,3 @@ protected:
 
 }
 
-#endif
